@@ -1,26 +1,98 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import PoemContainer from "./PoemContainer"
+import User from "./User"
+
+import Register from './Register'
+import Login from './Login'
+import Navbar from './Navbar'
+import { Route } from "react-router-dom"
+import * as serviceWorker from './serviceWorker';
+import NewPoemForm from './NewPoemForm';
+class App extends React.Component {
+
+ state = {
+  name: "Akil",
+  id: 136
+}
+
+ 
+ChangeUser = (newName, newId) => {
+  this.setState({
+    name: newName,
+    id: newId
+  })
+}
+
+// Where I put routes once that bug is solved
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      {/* WHen either of these buttons are used you set state of the user */}
+      
+      
+    <div>
+      <Navbar />
+
+      <Route exact path={`/users/${this.state.id}`} render={routeProps => (
+              <User
+                {...routeProps}
+                
+                username={this.state.name}
+                id={this.state.id}
+                changeUser={this.ChangeUser}
+              />
+            )} />
+      
+      <Route exact path="/login" render={routeProps => (
+              <Login
+                {...routeProps}
+                
+                username={this.state.name}
+                id={this.state.id}
+                changeUser={this.ChangeUser}
+              />
+            )} />
+      
+      
+      
+      
+      <Route exact path="/" render={routeProps => (
+              <PoemContainer
+                {...routeProps}
+                
+                username={this.state.name}
+                id={this.state.id}
+                changeUser={this.ChangeUser}
+              />
+            )} />
+      <Route exact path="/register" render={routeProps => (
+              <Register
+                {...routeProps}
+                
+                username={this.state.name}
+                id={this.state.id}
+                changeUser={this.ChangeUser}
+              />
+            )} />
+      <Route exact path="/newpoemform" render={routeProps => (
+              <NewPoemForm
+                {...routeProps}
+                
+                username={this.state.name}
+                id={this.state.id}
+                changeUser={this.ChangeUser}
+              />
+            )} />
+      
+    </div>
+    
+      {/* User having these props will render their user pages */}
     </div>
   );
+ }
 }
 
 export default App;

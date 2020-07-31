@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  text-align: left;
+  background-color: #FFE4B5;
 }
 
 .App-logo {
@@ -13,8 +14,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* .App-header {
+  background-color: #FFE4B5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -35,4 +36,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  
+  width: 30vw;
+  border-radius: 5px;
+  padding: 2px 8px;
+  background-color: #E40078;
+}
+
+.footer {
+  background-color: #FFE4B5;
+}
+
+.poems {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectedPoems {
+  padding: 2vw 8vh;
+}
+
+.logform {
+  background-color: #87d43fc9;
+}
+
+.regform {
+  background-color: #ebe985c9;
 }
