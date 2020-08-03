@@ -13,8 +13,8 @@ import NewPoemForm from './NewPoemForm';
 class App extends React.Component {
 
  state = {
-  name: "Akil",
-  id: 136
+  name: "Kua",
+  id: 142
 }
 
  

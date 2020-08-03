@@ -1,5 +1,6 @@
 import React from 'react';
 import User from "./User"
+import ReactPlayer from 'react-player';
 
 class Register extends React.Component {
   
@@ -22,10 +23,10 @@ class Register extends React.Component {
        
     
         
-        fetch('http://localhost:3000/api/v1/register', {
+        fetch('http://localhost:3000/users/register', {
           method: 'POST',
           body: JSON.stringify(this.state),
-        //   credentials: 'include',
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json"
           },
@@ -55,7 +56,9 @@ class Register extends React.Component {
         </div>
         <input type="submit" value="Register" />
       </form>
-      
+            <ReactPlayer 
+            url = "https://www.youtube.com/watch?v=l-MHDRuJ1ME"
+            />
       </div>
     );
   }

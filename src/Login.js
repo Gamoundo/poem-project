@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from "react-player"
 
 
 
@@ -24,7 +25,7 @@ class Login extends React.Component {
         
         fetch('http://localhost:3000/users', {
           method: 'POST',
-        //   credentials: 'include',
+          credentials: 'include',
           body: JSON.stringify(this.state),
           headers: {
             "Content-Type": "application/json"
@@ -40,6 +41,7 @@ class Login extends React.Component {
     }
   render() {
     return (
+        <div>
       <form className="logform" onSubmit={this.handleSubmit}>
         <h1>Login</h1>
         <div>
@@ -52,6 +54,10 @@ class Login extends React.Component {
         </div>
         <input type="submit" value="Login" />
       </form>
+        <ReactPlayer 
+         url="https://www.youtube.com/watch?v=MKUex3fci5c"
+        />
+      </div>
     );
   }
 }

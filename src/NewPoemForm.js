@@ -40,7 +40,7 @@ class NewPoemForm extends React.Component {
             "Content-Type": "application/json"
           },
         }).then(r => r.json())
-        .then(newpoem => this.props.addPoem(newpoem));
+        // .then(newpoem => this.props.addPoem(newpoem));
       }
     
 

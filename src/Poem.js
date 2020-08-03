@@ -12,7 +12,7 @@ const Poem = (props) => {
       <h4><b>Title: {props.name}</b></h4> 
       <p>Author: {props.user.name}</p>
     <p>Song: {props.song.name}</p> 
-    <audio controls onClick= {audio.play}> <source src={props.song.url} type="audio/mpeg" /> </audio>
+    <audio controls > <source src={props.song.url} type="audio/mpeg" /> </audio>
     </div>
     );
   };
