@@ -11,20 +11,20 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    # def login
-    #     user = User.find_by(username: params[:username])
+    def login
+        user = User.find_by(name: params[:name])
 
     
-    # if user && user.authenticate(params[:password])
-      
-    #   session[:user_id] = user.id
-    #   render json: user
-    # else
-    #   # otherwise, they're not authenticated
-    #   render json: { errors: "Invalid username or password" }, status: :unauthorized
-    # end
+        if user && user[:password] === params[:password]
+        
+        session[:user_id] = user.id
+        render json: user
+        else
+        # otherwise, they're not authenticated
+        render json: { errors: "Invalid username or password" }, status: :unauthorized
+        end
   
-    # end
+    end
 
     # def register
     #     user = User.create(username: params[:username], password: params[:password])
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
     #     end
     #   end
      
-    #   def autologin
-    #     render json: @current_user
-    #   end
+      def autologin
+        render json: @current_user
+      end
 
     def show
         user = User.find_by(id: params[:id])
