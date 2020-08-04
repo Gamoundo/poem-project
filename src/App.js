@@ -36,7 +36,7 @@ render() {
     <div>
       <Navbar />
 
-      <Route exact path={`/users/${this.state.id}`} render={routeProps => (
+      <Route exact path="/users/id" render={routeProps => (
               <User
                 {...routeProps}
                 

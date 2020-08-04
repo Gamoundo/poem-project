@@ -23,7 +23,7 @@ class Register extends React.Component {
        
     
         
-        fetch('http://localhost:3000/users/register', {
+        fetch('http://localhost:3000/users', {
           method: 'POST',
           body: JSON.stringify(this.state),
           credentials: 'include',
