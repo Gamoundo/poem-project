@@ -29,20 +29,20 @@ tony = User.create!({name: "Chopper", password: "Not@pet"})
 sulking = Song.create!({
     name: "Sulking",
     genre: "sad",
-    url: "/Users/akilgriff/Downloads/Sulking - William Rosati.mp3"
+    url: "/audio/Sulking_William_Rosati.mp3"
 })
 
 awaken = Song.create!({
     name: "Awaken",
     genre: "inspirational",
-    url: "/Users/akilgriff/Downloads/Awaken - Anno Domini Beats.mp3"
+    url: "/audio/Awaken_Anno_Domini_Beats.mp3"
 })
 
 
 really = Song.create!({
     name: "Really Really Doe",
     genre: "inspirational",
-    url: "/Users/akilgriff/Downloads/Really Really Doe - Diamond Ortiz.mp3"
+    url: "/audio/Really_Really_Doe_Diamond_Ortiz.mp3"
 })
 
 
@@ -50,50 +50,50 @@ really = Song.create!({
 meadows = Song.create!({
     name: "Meadows",
     genre: "Happy",
-    url: "/Users/akilgriff/Downloads/Meadows - Ramzoid.mp3"
+    url: "/audio/Meadows_Ramzoid.mp3"
 })
 
 
 treat_yourself = Song.create!({
     name: "Treat Yourself",
     genre: "Happy",
-    url: "/Users/akilgriff/Downloads/Treat Yourself - Dyalla.mp3"
+    url: "/audio/Treat_Yourself_Dyalla.mp3"
 })
 
 steps= Song.create!({
     name: "Steps",
     genre: "inspirational",
-    url: "/Users/akilgriff/Downloads/Steps - Anno Domini Beats.mp3"
+    url: "/audio/Steps_Anno_Domini_Beats.mp3"
 })
 
 ob1 = Song.create!({
     name: "OB1",
     genre: "sad",
-    url: "/Users/akilgriff/Downloads/OB1 - RalphReal.mp3"
+    url: "/audio/OB1_RalphReal.mp3"
 })
 
 words = Song.create!({
     name: "American Vernacular",
     genre: "inspirational",
-    url: "/Users/akilgriff/Downloads/American Vernacular - RAGE.mp3"
+    url: "/audio/American_Vernacular_RAGE.mp3"
 })
 
 short = Song.create!({
     name: "I Can't Reach",
     genre: "happy",
-    url: "/Users/akilgriff/Downloads/I Can't Reach - Verified Picasso.mp3"
+    url: "/audio/I_Can't_Reach_Verified_Picasso.mp3"
 })
 
 regrets = Song.create!({
     name: "Regrets",
     genre: "sad",
-    url:  "/Users/akilgriff/Downloads/Regrets - Causmic.mp3"
+    url:  "/audio/Regrets_Causmic.mp3"
 })
 
 sleepwalker = Song.create!({
     name: "Sleepwalker",
     genre: "happy",
-    url: "/Users/akilgriff/Downloads/Sleepwalker - TrackTribe.mp3"
+    url: "/audio/Sleepwalker_TrackTribe.mp3"
 })
 
 shame = Poem.create!({
@@ -245,4 +245,13 @@ picture = Poem.create!({
     user: steven,
     song: meadows
 })
+
+testing= Poem.create!({
+    name: "Testing",
+    genre: "sad",
+    body: "testing testing. I really should be resting, but instead I'm wrestling with this app. Trying to be vigilant but I really need a nap. Fix one thing break 30 others. Why won't you work? Have I really been too demanding? I thought we had an understanding thought we both wanted what was best for you. I guess you were just getting the best of me",
+    user: akil,
+    song: regrets
+}) 
+
 
