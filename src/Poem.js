@@ -3,7 +3,7 @@ import React from "react"
 const Poem = (props) => {
     // so div onclick should display the poem and (play music stretch feature)
     console.log(props.song.url)
-    console.log("=== hey yo yo", props)
+    // console.log("=== hey yo yo", props)
     let audio = new Audio(props.song.url)
 
   

@@ -32,10 +32,22 @@ class Login extends React.Component {
           },
         }).then(r => r.json())
         .then(newuser => {
+          if(!newuser.error) {
+
+           let user = {
+              name:newuser.name,
+              id: newuser.id
+            }
             console.log(newuser)
-             this.props.changeUser(newuser.name, newuser.id)
+            window.localStorage.setItem("Poem Project", JSON.stringify(user)); 
+            this.props.changeUser(user.name, user.id)
         
-            this.props.history.push(`/users/${newuser.id}`);
+            this.props.history.push("/profile");
+          }
+          else {
+            alert("User doesn't exist. Sure it isn't your first time here?")
+          }
+          
       })
     
     }

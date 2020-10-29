@@ -10,11 +10,15 @@ import Navbar from './Navbar'
 import { Route } from "react-router-dom"
 import * as serviceWorker from './serviceWorker';
 import NewPoemForm from './NewPoemForm';
+import Profile from './Profile'
+
+const storedUser= window.localStorage.getItem("Poem Project")
+
 class App extends React.Component {
 
  state = {
-  name: "Kua",
-  id: 142
+  name: storedUser ? JSON.parse(storedUser).name : "",
+  id: storedUser ? JSON.parse(storedUser).id : 0
 }
 
  
@@ -35,12 +39,12 @@ render() {
       
     <div>
       <Navbar />
-
-      <Route exact path="/users/id" render={routeProps => (
-              <User
+      {storedUser ? <button> Logout</button> : ""}
+      <Route exact path="/profile" render={routeProps => (
+              <Profile
                 {...routeProps}
                 
-                username={this.state.name}
+                name={this.state.name}
                 id={this.state.id}
                 changeUser={this.ChangeUser}
               />

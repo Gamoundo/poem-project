@@ -21,7 +21,7 @@ class Register extends React.Component {
         
         
        
-    
+        
         
         fetch('http://localhost:3000/users', {
           method: 'POST',
@@ -32,10 +32,24 @@ class Register extends React.Component {
           },
         }).then(r => r.json())
         .then(newuser => {
+          
             console.log(newuser)
              this.props.changeUser(newuser.name, newuser.id)
-        
-            this.props.history.push(`/users/${newuser.id}`);
+             window.localStorage.setItem("Poem Project", JSON.stringify(newuser));
+            this.props.history.push('/profile');
+            
+            // newuser.forEach((user) => {
+            //   return (
+            //     <User
+            //   id= {user.id}
+            //   name={user.name} 
+            //   />
+            //   )
+            // })
+            
+              
+            
+            
       })
     
     }

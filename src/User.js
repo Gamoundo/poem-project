@@ -1,23 +1,28 @@
-import React, { Component } from "react";
+import React  from "react";
 import Register from "./Register"
 import Login from "./Login"
 import NewPoemForm from "./NewPoemForm"
 import Poem from "./Poem"
 import SelectedPoem from "./SelectedPoem"
-// import { withRouter} from "react-router-dom"
-class User extends Component {
+import { withRouter} from "react-router-dom"
+
+const storedUser= window.localStorage.getItem("Poem Project")
+
+class User extends React.Component {
 
     // constructor(props) {
     //     super (props) 
         
     // }
     state = {
-        id: this.props.id,
-        name: this.props.username,
+        id: storedUser ? JSON.parse(storedUser).id : 0,
+        name: storedUser ? JSON.parse(storedUser).name : "",
         poems: [],
         poem: "",
         userpoem: []
     }
+
+   
 
 displayPoem = (text) => {
     this.setState({
@@ -34,6 +39,7 @@ addPoem(text) {
 
   renderUserPoems () {
     console.log(this.state.id)
+    console.log(this.state.name)
   return (this.state.userpoem.map((poem) => {
     let callback = () => this.displayPoem(poem)
     return(

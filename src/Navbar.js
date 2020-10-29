@@ -41,6 +41,14 @@ class Navbar extends React.Component {
             background: 'purple'
           }}
         >Login</NavLink>
+        <NavLink
+          to="/profile"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'purple'
+          }}
+        >Profile</NavLink>
       </div>
     )
   }
