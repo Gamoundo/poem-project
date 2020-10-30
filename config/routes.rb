@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # namespace :api do
   #   namespace :v1 do
   #     post "/register", to: "users#register"
-  #     post "/login", to: "users#login"
+      post "/login", to: "users#login"
   #     post "/logout", to: "users#logout"
   #     get "/autologin", to: "users#autologin"
   #   end
