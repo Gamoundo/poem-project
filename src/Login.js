@@ -20,10 +20,10 @@ class Login extends React.Component {
         event.preventDefault();
         
         
-       
+       console.log(this.state)
     
         
-        fetch('http://localhost:3000/users', {
+        fetch('http://localhost:3000/login', {
           method: 'POST',
           credentials: 'include',
           body: JSON.stringify(this.state),
@@ -32,21 +32,26 @@ class Login extends React.Component {
           },
         }).then(r => r.json())
         .then(newuser => {
-          if(!newuser.error) {
+          if(newuser.name === undefined) {
+            alert("User doesn't exist. Sure it isn't your first time here?")
+          }
+          else  {
 
            let user = {
               name:newuser.name,
               id: newuser.id
             }
             console.log(newuser)
-            window.localStorage.setItem("Poem Project", JSON.stringify(user)); 
             this.props.changeUser(user.name, user.id)
+            window.localStorage.setItem("Poem Project", JSON.stringify(user)); 
+            window.location = '/profile'
         
-            this.props.history.push("/profile");
+            // this.props.history.push("/profile");
           }
-          else {
-            alert("User doesn't exist. Sure it isn't your first time here?")
-          }
+         
+          // else {
+          //   alert("User doesn't exist. Sure it isn't your first time here?")
+          // }
           
       })
     
