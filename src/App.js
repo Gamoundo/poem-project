@@ -29,6 +29,13 @@ ChangeUser = (newName, newId) => {
   })
 }
 
+HandleLogout() {
+  localStorage.clear()
+  window.location = '/'
+}
+
+
+
 // Where I put routes once that bug is solved
 render() {
   return (
@@ -39,7 +46,7 @@ render() {
       
     <div>
       <Navbar />
-      {storedUser ? <button> Logout</button> : ""}
+      {storedUser ? <button onClick = {this.HandleLogout}> Logout</button> : ""}
       <Route exact path="/profile" render={routeProps => (
               <Profile
                 {...routeProps}
