@@ -31,10 +31,10 @@ displayPoem = (text) => {
     })
   }
 
-addPoem(text) {
-    this.setState({
-        userpoem: [...this.state.userpoem, text]
-    })
+addPoem = text => {
+    this.setState(prevState => ({
+        userpoem: [...prevState.userpoem, text]
+    }))
 }
 
   renderUserPoems () {
@@ -57,7 +57,15 @@ addPoem(text) {
 }
 
 componentDidMount() {
-    fetch("http://localhost:3000/poems")
+    fetch("http://localhost:3000/poems", {
+      method: 'GET',
+      
+      headers: {
+        "Content-Type": "application/json",
+        
+      }
+    }
+    )
     .then(r => r.json())
     .then(poems =>  {
         this.setState({ poems })

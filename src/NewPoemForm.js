@@ -10,7 +10,8 @@ class NewPoemForm extends React.Component {
         genre: "happy",
         body: "",
         song: "Awaken",
-        user: this.props.user
+        user: this.props.username,
+        id: this.props.id
     }
 
     handleChange = (event) => {
@@ -40,7 +41,7 @@ class NewPoemForm extends React.Component {
             "Content-Type": "application/json"
           },
         }).then(r => r.json())
-        .then(newpoem => this.props.addPoem(newpoem));
+        // .then(newpoem => this.props.addPoem(newpoem));
       }
     
 
