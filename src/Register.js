@@ -36,7 +36,7 @@ class Register extends React.Component {
             console.log(newuser)
              this.props.changeUser(newuser.name, newuser.id)
              window.localStorage.setItem("Poem Project", JSON.stringify(newuser));
-            this.props.history.push('/profile');
+             window.location = '/profile'
             
             // newuser.forEach((user) => {
             //   return (

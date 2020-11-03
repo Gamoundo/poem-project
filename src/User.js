@@ -84,7 +84,7 @@ render (){
         <div>
          <h1>{this.state.name}'s poetry page</h1>
          <h2>{this.state.id}</h2>
-         <NewPoemForm  userpoem={this.state.userpoem} addPoem={this.addPoem} user={this.props.username}/>
+         <NewPoemForm  userpoem={this.state.userpoem} addPoem={this.addPoem} user={this.state.name} uid={this.state.id}/>
          <div className="poems">
          
             <div>{this.renderUserPoems()}</div>
