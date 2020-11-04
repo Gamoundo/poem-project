@@ -70,3 +70,15 @@ body {
 .regform {
   background-color: #ebe985c9;
 }
+
+.title {
+  text-align: center;
+  font-size: xx-large;
+  color: #6d25ccc9;
+}
+
+.logout {
+  display: flex;
+  justify-content: right;
+  
+}

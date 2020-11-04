@@ -45,8 +45,11 @@ render() {
       
       
     <div>
+      <h1 className="title">Poetry Palace</h1>
+      <img src="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/HDaIpPnyBHskerM6OeHR8cpvIuQ=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/NCV4ZC3HJ5H7TAS3TZKPRWH37M.jpg" alt="Reading for the fun of it" width="700" height="600"
+      />
       <Navbar />
-      {storedUser ? <button onClick = {this.HandleLogout}> Logout</button> : ""}
+      {storedUser ? <button className="logout" onClick = {this.HandleLogout}> Logout</button> : ""}
       <Route exact path="/profile" render={routeProps => (
               <Profile
                 {...routeProps}
