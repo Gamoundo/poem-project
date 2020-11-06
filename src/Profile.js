@@ -10,7 +10,7 @@ class Profile extends React.Component {
 render() {
     return (
         <div>
-            <User  name={this.state.name} id={this.state.id}/>
+            <User/>
         </div>
     )
 }

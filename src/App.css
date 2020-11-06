@@ -75,10 +75,11 @@ body {
   text-align: center;
   font-size: xx-large;
   color: #6d25ccc9;
+  font-family: fantasy;
 }
 
 .logout {
   display: flex;
-  justify-content: right;
-  
+  align-items: flex-end;
+  font-family: Trebuchet;
 }

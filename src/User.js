@@ -82,8 +82,8 @@ render (){
     console.log(this.state.userpoem)
     return (
         <div>
-         <h1>{this.state.name}'s poetry page</h1>
-         <h2>Write a Masterpiece! No Pressure!!</h2>
+         <h1 style={{fontFamily: "fantasy"}}>{this.state.name}'s poetry page</h1>
+         <h2 style={{fontFamily: "Trebuchet"}}>Write a Masterpiece! No Pressure!!</h2>
          <NewPoemForm  userpoem={this.state.userpoem} addPoem={this.addPoem} user={this.state.name} uid={this.state.id}/>
          <div className="poems">
          
